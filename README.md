@@ -1,37 +1,40 @@
-# 极限面板
+<div align=center> <h1>极限面板</h1> </div>
 
-#### 介绍
-适用于云(喵)崽的原神极限面板数据，！！注意并非js插件！！
+## 项目介绍
 
-#### 软件架构
-软件架构说明
+原神极限面板貌似没人写，此仓库会同步卡池更新
 
+## 克隆方式(切记无论使用那种方法克隆都需在关机状态下操作)
 
-#### 安装教程
+### 1.使用命令克隆(推荐,后续可更新)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+克隆命令,根目录执行
 
-#### 使用说明
+```
+git clone --depth=1 https://gitee.com/actually-the-rain-is-good/limit.git ./plugins/limit
+```
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+克隆完成须进入"./plugins/limit"目录手动将100000000.json放入"./data/UserData"(关机-放入-开机)
 
-#### 参与贡献
+后续更新命令【#更新limit】,更新之后的替换也须在关机状态下操作
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+### 2.直接克隆(不推荐,每次更新只能重新下载压缩包)
 
+> 克隆/下载【100000000.json】到根目录下"./data/UserData"即可
 
-#### 特技
+## 使用方法
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+发送【极限xx】即可查看该角色的极限面板
+
+###### 如果有一些不准确的地方可以提[issuer](https://gitee.com/actually-the-rain-is-good/limit/issues)如果合理有用我会在下一次更新中修改
+
+[![访问量](https://profile-counter.glitch.me/limit/count.svg)](https://gitee.com/actually-the-rain-is-good/limit)
+
+## 相关链接
+1.[云崽主体](https://gitee.com/Le-niao/Yunzai-Bot)
+
+2.[喵云崽](https://gitee.com/yoimiya-kokomi/Yunzai-Bot)
+
+3.[喵崽](https://gitee.com/yoimiya-kokomi/Miao-Yunzai)
+
+4.[云崽插件索引](https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index)
