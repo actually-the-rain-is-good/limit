@@ -1,0 +1,39 @@
+{
+  "id": 10000040,
+  "name": "派蒙",
+  "abbr": "派蒙",
+  "title": "米忽悠",
+  "star": 5,
+  "elem": "cryo",
+  "allegiance": "？？？",
+  "weapon": "sword",
+  "birth": "6-1",
+  "astro": "？？？",
+  "desc": "测试角色",
+  "cncv": "多多poi",
+  "jpcv": "古贺葵",
+  "costume": false,
+  "ver": 1,
+  "baseAttr": {
+    "hp": 11451.4,
+    "atk": 208.32,
+    "def": 576.42
+  },
+  "growAttr": {
+    "key": "cdmg",
+    "value": 38.4
+  },
+  "talentId": {},
+  "talentCons": {
+    "e": 3,
+    "q": 5
+  },
+  "materials": {
+    "gem": "璀璨原钻",
+    "boss": "极寒之核",
+    "specialty": "风车菊",
+    "normal": "名刀镡",
+    "talent": "「浮世」的哲学",
+    "weekly": "东风之爪"
+  }
+}

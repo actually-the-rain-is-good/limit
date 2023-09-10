@@ -1,0 +1,9 @@
+将【100000000.json】放到data/UserData
+
+【派蒙】文件夹放到plugins/miao-plugin/resources/meta/charater
+
+注:如果装了梁氏插件建议删掉梁氏的派蒙伤害计算
+
+你问评分低?我不到啊
+
+你问叫不出派蒙?我不到啊
