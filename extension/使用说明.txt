@@ -1,0 +1,13 @@
+提示：会改的可以用
+
+确认关闭机器人后，将【100000000.json】放到data/UserData
+【meta】文件夹放到plugins/miao-plugin/resources
+放入后重启机器人即可
+
+注:1.如果装了梁氏插件建议删掉梁氏的派蒙伤害计算
+     2.再次提醒会改的用(需要修改plugins/miao-plugin/config中的派蒙id为10000040)
+
+你问叫不出来?我不到啊
+
+目前新增角色:
+  - 派蒙

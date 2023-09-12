@@ -14,17 +14,23 @@
 git clone --depth=1 https://gitee.com/actually-the-rain-is-good/limit.git ./plugins/limit
 ```
 
-克隆完成须进入"./plugins/limit"目录手动将100000000.json放入"./data/UserData"(关机-放入-开机)
-
-后续更新命令【#更新limit】,更新之后的替换也须在关机状态下操作
-
 ### 2.直接克隆(不推荐,每次更新只能重新下载压缩包)
 
 > 克隆/下载【100000000.json】到根目录下"./data/UserData"即可
 
 ## 使用方法
 
-发送【极限xx】即可查看该角色的极限面板
+克隆完成须进入"./plugins/limit"目录
+
+分为两个版本，选择其一(使用前务必先查看使用说明)
+
+* general/为通用版本，仅会更新原神可获得的角色。
+
+* extension/为扩展版本，会更新更多角色如派蒙(已更新)、女士、天理....由于没有素材,后续角色会更新很慢,如有天赋和命座素材可加我Q[257800180](https://qm.qq.com/q/FjU81H9DWi&personal_qrcode_source=3)分享你的素材。
+
+后续更新命令【#更新limit】,更新之后的替换也须在关机状态下操作
+
+放入文件开启机器人，发送【极限xx】即可查看该角色的极限面板
 
 ###### 如果有一些不准确的地方可以提[issuer](https://gitee.com/actually-the-rain-is-good/limit/issues)如果合理有用我会在下一次更新中修改
 
