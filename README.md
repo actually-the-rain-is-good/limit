@@ -34,19 +34,25 @@ git clone --depth=1 https://gitee.com/actually-the-rain-is-good/limit.git ./plug
 
 分为两个版本，选择其一
 
-##### general版本(该版本为通用版本，仅会更新原神可获得的角色。)
+##### 1.general版本(该版本为通用版本，仅会更新原神可获得的角色。)
 
 * 可发送`#通用替换`进行文件替换，然后回复 `是`进行重启以应用
 
-##### extension(为扩展版本，会更新更多角色如派蒙(已更新)、女士、天理....由于没有素材,后续角色会更新很慢,如有天赋和命座素材可在[issuer](https://gitee.com/actually-the-rain-is-good/limit/issues)中说明你想要分享的素材并加注QQ号)
+##### 2.extension版本(该版本为扩展版本，会更新更多角色如派蒙(已更新)、女士、天理....)
 
 * 使用该版本需先将插件目录下【extension】文件中【派蒙】文件夹复制到【miao-plugin/resources/meat/character】下
 
 * 发送`#扩展替换`进行相关文件替换，然后回复`是`进行重启以应用
 
-后续更新命令`#更新limit`,更新之后如果有新角色更新，需再次发送`#通用替换`/`#扩展替换`，重启后以应用
+## 后续更新
+
+后续更新命令`#limit更新`/`#lp更新`(lp意为limit panel),更新之后如果有新角色更新，需再次发送`#通用替换`/`#扩展替换`，重启后以应用
 
 机器人启动后，发送`极限xx`即可查看该角色的极限面板
+
+## 功能建议/错误反馈
+
+###### 由于extension版本没有素材,后续角色会更新很慢,如有天赋和命座素材可在[issuer](https://gitee.com/actually-the-rain-is-good/limit/issues)中分享你的素材或说明是哪个角色的素材，并加注QQ号(其他账号请另说明)
 
 ###### 如果有一些不准确的地方可以提[issuer](https://gitee.com/actually-the-rain-is-good/limit/issues)如果合理有用我会在下一次更新中修改
 
