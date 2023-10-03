@@ -1,7 +1,7 @@
 {
   "id": 20000008,
-  "name": "女士",
-  "abbr": "女士",
+  "name": "罗莎琳",
+  "abbr": "罗莎琳",
   "title": "愚人众执行官第八席",
   "star": 5,
   "elem": "cryo",
@@ -31,7 +31,7 @@
   "materials": {
     "gem": "哀叙冰玉",
     "boss": "晶凝之华",
-    "specialty": "风车菊",
+    "specialty": "血斛",
     "normal": "地脉的新芽",
     "talent": "「诤言」的哲学",
     "weekly": "无心的渊镜"
