@@ -28,7 +28,7 @@ git clone --depth=1 https://gitee.com/actually-the-rain-is-good/limit.git ./plug
 
 [点击下载zip文件](https://gitee.com/actually-the-rain-is-good/limit/repository/archive/master.zip)
 
-下载解压后务必将文件名改为`limit`(否则会导致命令替换时无法替换甚至卡死进程)，然后放到根目录下plugins文件夹中
+下载解压后务必将文件名改为`limit`(否则会导致载入插件错误或命令替换不成功)，然后放到根目录下plugins文件夹中
 
 ## 使用方法
 
@@ -38,9 +38,9 @@ git clone --depth=1 https://gitee.com/actually-the-rain-is-good/limit.git ./plug
 
 * 可发送`#通用替换`进行文件替换，然后回复 `是`进行重启以应用
 
-##### 2.extension版本(该版本为扩展版本，会更新更多角色如派蒙(已更新)、女士、天理....)
+##### 2.extension版本(该版本为扩展版本，会更新更多角色如派蒙(已更新)、女士(已更新)、天理....)
 
-* 使用该版本需先将插件目录下【extension】文件中【派蒙】文件夹复制到【miao-plugin/resources/meat/character】下
+* 使用该版本需先将插件目录下【extension】文件中【character】文件夹复制到【miao-plugin/resources/meta】下
 
 * 发送`#扩展替换`进行相关文件替换，然后回复`是`进行重启以应用
 
@@ -52,10 +52,14 @@ git clone --depth=1 https://gitee.com/actually-the-rain-is-good/limit.git ./plug
 
 ## 功能建议/错误反馈
 
-###### 由于extension版本没有素材,后续角色会更新很慢,如有天赋和命座素材可在[issuer](https://gitee.com/actually-the-rain-is-good/limit/issues)中分享你的素材或说明是哪个角色的素材，并加注QQ号(其他账号请另说明)
+- QQ交流群:[751976647](https://qm.qq.com/q/k6jV4bvLEW)
 
-###### 如果有一些不准确的地方可以提[issuer](https://gitee.com/actually-the-rain-is-good/limit/issues)如果合理有用我会在下一次更新中修改
+- 由于extension版本没有素材,后续角色会更新很慢,如有天赋和命座素材可在[issuer](https://gitee.com/actually-the-rain-is-good/limit/issues)中分享你的素材或说明是哪个角色的素材，并加注QQ号(其他账号请另说明)
 
+- 如果有一些不准确的地方可以提[issuer](https://gitee.com/actually-the-rain-is-good/limit/issues)如果合理有用我会在下一次更新中修改
+
+### 鸣谢
+- 部分代码及素材来自[Miao-Yunzai](https://gitee.com/yoimiya-kokomi/Miao-Yunzai),[Miao-Plugin](https://gitee.com/yoimiya-kokomi/miao-plugin),[liangshi-calc](https://gitee.com/liangshi233/liangshi-calc)，特在此声明感谢。
 
 ## 相关链接
 1.[云崽主体](https://gitee.com/Le-niao/Yunzai-Bot)

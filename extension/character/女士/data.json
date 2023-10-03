@@ -1,0 +1,39 @@
+{
+  "id": 20000008,
+  "name": "女士",
+  "abbr": "女士",
+  "title": "愚人众执行官第八席",
+  "star": 5,
+  "elem": "cryo",
+  "allegiance": "？？？",
+  "weapon": "catalyst",
+  "birth": "9-1",
+  "astro": "？？？",
+  "desc": "测试角色",
+  "cncv": "子音",
+  "jpcv": "庄子裕衣",
+  "costume": false,
+  "ver": 1,
+  "baseAttr": {
+    "hp": 11451.4,
+    "atk": 208.32,
+    "def": 576.42
+  },
+  "growAttr": {
+    "key": "atkPct",
+    "value": 28.8
+  },
+  "talentId": {},
+  "talentCons": {
+    "e": 3,
+    "q": 5
+  },
+  "materials": {
+    "gem": "哀叙冰玉",
+    "boss": "晶凝之华",
+    "specialty": "风车菊",
+    "normal": "地脉的新芽",
+    "talent": "「诤言」的哲学",
+    "weekly": "无心的渊镜"
+  }
+}
