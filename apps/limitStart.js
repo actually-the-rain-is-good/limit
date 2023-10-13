@@ -7,8 +7,9 @@ const require = createRequire(import.meta.url)
 const { exec } = require('child_process')
 
 const _path = process.cwd()
-      const miaoFile = path.join(`${_path}/data/UserData`, `100000000.json`)
-let timer
+const miaoFile = path.join(`${_path}/data/UserData`, `100000000.json`)
+const miaosrFile = path.join(`${_path}/data/PlayerData/sr`, `100000000.json`)
+const srFile0 = path.join(`${_path}/plugins/limit/general/sr`, `100000000.json`)
 
 export class limitstart extends plugin {
   constructor() {
@@ -34,25 +35,30 @@ export class limitstart extends plugin {
   }
 
   async generalpanel() {
-      const generalFile0 = path.join(`${_path}/plugins/limit/general`, `100000000.json`)
+    const generalFile0 = path.join(`${_path}/plugins/limit/general`, `100000000.json`)
     fs.copyFile(generalFile0, miaoFile, (err) => {
       if (err) throw err
     })
-         this.setContext('hei');
+    fs.copyFile(srFile0, miaosrFile, (err) => {
+      if (err) throw err
+    })
+    this.setContext('hei');
     await this.e.reply(`极限面板替换成功  ✅\n是否重启云崽以载入数据[重启请发【是】]`, true)
-         this.timer = setTimeout(() => {
-         this.questions = null;           
-         this.timer = null;        
-         }, this.waitingTime); 
+      this.timer = setTimeout(() => {
+      this.questions = null;           
+      this.timer = null;        
+      }, this.waitingTime); 
   }
 
   async extensionpanel() {
-     const extensionFile0 = path.join(`${_path}/plugins/limit/extension`, `100000000.json`)
-      const miaoFile1 = path.join(`${_path}/plugins/miao-plugin/resources/meta/artifact`, `artis-mark.js`)
-      const extensionFile1 = path.join(`${_path}/plugins/limit/extension`, `artis-mark.js`)
-      const miaoFile2 = path.join(`${_path}/plugins/miao-plugin/config/system`, `character_system.js`)
-      const extensionFile2 = path.join(`${_path}/plugins/limit/extension`, `character_system.js`)
-
+    const extensionFile0 = path.join(`${_path}/plugins/limit/extension`, `100000000.json`)
+    const miaoFile1 = path.join(`${_path}/plugins/miao-plugin/resources/meta/artifact`, `artis-mark.js`)
+    const extensionFile1 = path.join(`${_path}/plugins/limit/extension`, `artis-mark.js`)
+    const miaoFile2 = path.join(`${_path}/plugins/miao-plugin/config/system`, `character_system.js`)
+    const extensionFile2 = path.join(`${_path}/plugins/limit/extension`, `character_system.js`)
+    fs.copyFile(srFile0, miaosrFile, (err) => {
+      if (err) throw err
+    })
     fs.copyFile(extensionFile0, miaoFile, (err) => {
       if (err) throw err
     })
