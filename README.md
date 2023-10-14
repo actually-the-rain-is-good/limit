@@ -22,8 +22,16 @@
 
 克隆命令,根目录执行
 
+gitee:
+
 ```
 git clone --depth=1 https://gitee.com/actually-the-rain-is-good/limit.git ./plugins/limit
+```
+
+github:
+
+```
+git clone --depth=1 https://github.com/actually-the-rain-is-good/limit.git ./plugins/limit
 ```
 
 ### 2.直接克隆(不推荐,每次更新只能重新下载压缩包)
