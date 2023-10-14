@@ -9,8 +9,8 @@ export class limit extends plugin {
 	}
 	accept(e) {
 		try {
-			if (/#?极限(面板)?/.test(e.msg)) {
-                e.msg = e.msg.replace(/#?极限(面板)?/g, '');
+			if (/#*(星铁)?极限(面板)?/.test(e.msg)) {
+                e.msg = e.msg.replace(/#*(星铁)?极限(面板)?/g, '');
                 e.msg =  `#${e.msg}面板100000000`
 			}
 		} catch (err) { }
