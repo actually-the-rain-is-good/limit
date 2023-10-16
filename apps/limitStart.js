@@ -9,7 +9,7 @@ const { exec } = require('child_process')
 const _path = process.cwd()
 const miaoFile = path.join(`${_path}/data/UserData`, `100000000.json`)
 const miaosrFile = path.join(`${_path}/data/PlayerData/sr`, `100000000.json`)
-const srFile0 = path.join(`${_path}/plugins/limit/general/sr`, `100000000.json`)
+const srFile = path.join(`${_path}/plugins/limit/general/sr`, `100000000.json`)
 
 export class limitstart extends plugin {
   constructor() {
@@ -39,15 +39,14 @@ export class limitstart extends plugin {
     fs.copyFile(generalFile0, miaoFile, (err) => {
       if (err) throw err
     })
-    fs.copyFile(srFile0, miaosrFile, (err) => {
+    fs.copyFile(srFile, miaosrFile, (err) => {
       if (err) throw err
     })
     this.setContext('hei');
     await this.e.reply(`极限面板替换成功  ✅\n是否重启云崽以载入数据[重启请发【是】]`, true)
       this.timer = setTimeout(() => {
-      this.questions = null;           
-      this.timer = null;        
-      }, this.waitingTime); 
+      this.timer = null;
+      }, this.waitingTime);
   }
 
   async extensionpanel() {
@@ -56,7 +55,7 @@ export class limitstart extends plugin {
     const extensionFile1 = path.join(`${_path}/plugins/limit/extension`, `artis-mark.js`)
     const miaoFile2 = path.join(`${_path}/plugins/miao-plugin/config/system`, `character_system.js`)
     const extensionFile2 = path.join(`${_path}/plugins/limit/extension`, `character_system.js`)
-    fs.copyFile(srFile0, miaosrFile, (err) => {
+    fs.copyFile(srFile, miaosrFile, (err) => {
       if (err) throw err
     })
     fs.copyFile(extensionFile0, miaoFile, (err) => {
@@ -68,30 +67,28 @@ export class limitstart extends plugin {
     fs.copyFile(extensionFile2, miaoFile2, (err) => {
       if (err) throw err
     })
-        this.setContext('hei');
+    this.setContext('hei');
     await this.e.reply(`拓展极限面板替换成功  ✅\n是否重启云崽以载入数据[重启请发【是】]`, true)
-         this.timer = setTimeout(() => {
-         this.questions = null;           
-         this.timer = null;        
-         }, this.waitingTime); 
+        this.timer = setTimeout(() => {
+        this.timer = null;
+        }, this.waitingTime);
   }
 
-  startTimer () { 
-    this.timer = setInterval(() => { 
-    let now = Date.now(); 
-      for (let user_id in this.timeout) { 
-        if (this.timeout < now) { 
+  startTimer () {
+    this.timer = setInterval(() => {
+    let now = Date.now();
+      for (let user_id in this.timeout) {
+        if (this.timeout < now) {
           this.e.reply("操作超时已取消"); //发送超时消息给用户
-          this.questions = null; 
-          this.timeout = null; 
+          this.timeout = null;
         }
       }
     }, 1000);
   }
 
-  stopTimer () { 
-    clearInterval(this.timer); 
-    this.timer = null; 
+  stopTimer () {
+    clearInterval(this.timer);
+    this.timer = null;
   }
 
   async init () {
@@ -114,7 +111,7 @@ export class limitstart extends plugin {
 
   async hei(e) {
     let msg = this.e.msg;
- if(msg == '是'){
+    if(msg == '是'){
     await this.e.reply('开始执行重启，请稍等...')
     logger.mark(`${this.e.logFnc} 开始执行重启，请稍等...`)
     let data = JSON.stringify({

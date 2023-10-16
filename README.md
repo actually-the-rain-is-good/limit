@@ -5,7 +5,8 @@
 [![访问量](https://profile-counter.glitch.me/limit/count.svg)](https://gitee.com/actually-the-rain-is-good/limit)
 
 [![](https://img.shields.io/badge/Yunzai-v3-yellow)](https://gitee.com/Le-niao/Yunzai-Bot)
-[![](https://img.shields.io/badge/Miao﹣­­­­­­Yunzai-v3.1.0-yellow)](https://gitee.com/yoimiya-kokomi/Miao-Yunzai)
+[![](https://img.shields.io/badge/Miao﹣­­­­­­Yunzai-v3.1.1-yellow)](https://gitee.com/yoimiya-kokomi/Miao-Yunzai)
+[![](https://img.shields.io/badge/TRSS﹣­­­­­­Yunzai-v3.1.1-yellow)](https://gitee.com/TimeRainStarSky/Yunzai)
 [![](https://img.shields.io/badge/Author-其实雨很好-red)](https://gitee.com/actually-the-rain-is-good)
 <a href='https://gitee.com/actually-the-rain-is-good/limit/stargazers'><img src='https://gitee.com/actually-the-rain-is-good/limit//badge/star.svg?theme=dark' alt='star'></img></a>
 </div>
@@ -14,7 +15,15 @@
 
 喵喵插件原神/星铁极限面板，此仓库会同步卡池更新。
 
-星铁插件我有考虑写，如果没人提需求那我就不动工了。
+## 功能
+
+- [x] 原神极限双爆面板
+- [ ] 原神极限辅助面板
+- [ ] 原神扩展角色/原魔图鉴
+    - [x] 派蒙
+    - [ ] 天理(准备重置为仅火元素形态)
+- [x] 星铁极限面板
+- [x] 命令替换
 
 ## 克隆方式
 
@@ -56,11 +65,13 @@ git clone --depth=1 https://github.com/actually-the-rain-is-good/limit.git ./plu
 
 ## 后续更新
 
-后续更新命令`#limit更新`/`#lp更新`(lp意为limit panel),更新之后如果有新角色更新，需再次发送`#通用替换`/`#扩展替换`，重启后以应用
+推荐使用本插件的更新命令`#limit更新`/`#lp更新`,更新之后不会自动重启,如有更新可发送`#通用替换`/`#扩展替换`进行文件替换,然后回复`是`进行重启以应用
 
 机器人启动后，发送`极限xx`即可查看该角色的极限面板
 
 ## 功能建议/错误反馈
+
+- 注:若发送替换命令后未重启,发送`极限xx`可能会出现替换的面板数据被重置为1kb文件,从而出现角色未放置展柜或者本地暂无uid100000000的面板数据的情况,请重新命令替换并重启以应用更新。
 
 - QQ交流群:[751976647](https://qm.qq.com/q/k6jV4bvLEW)
 
