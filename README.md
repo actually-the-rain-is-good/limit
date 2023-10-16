@@ -20,8 +20,6 @@
 - [x] 原神极限双爆面板
 - [ ] 原神极限辅助面板
 - [ ] 原神扩展角色/原魔图鉴
-    - [x] 派蒙
-    - [ ] 天理(准备重置为仅火元素形态)
 - [x] 星铁极限面板
 - [x] 命令替换
 
@@ -71,7 +69,7 @@ git clone --depth=1 https://github.com/actually-the-rain-is-good/limit.git ./plu
 
 ## 功能建议/错误反馈
 
-- 注:若发送替换命令后未重启,发送`极限xx`可能会出现替换的面板数据被重置为1kb文件,从而出现角色未放置展柜或者本地暂无uid100000000的面板数据的情况,请重新命令替换并重启以应用更新。
+- 注:若发送替换命令后未重启,发送`极限xx`可能会出现替换的面板数据被重置为1kb文件,从而出现"角色未放置展柜"或者"本地暂无uid100000000的面板数据"的情况,请重新命令替换并重启以应用更新。
 
 - QQ交流群:[751976647](https://qm.qq.com/q/k6jV4bvLEW)
 
@@ -79,7 +77,7 @@ git clone --depth=1 https://github.com/actually-the-rain-is-good/limit.git ./plu
 
 - 如果有一些不准确的地方可以提[issuer](https://gitee.com/actually-the-rain-is-good/limit/issues)如果合理有用我会在下一次更新中修改
 
-### 鸣谢
+## 鸣谢
 - 部分代码及素材来自[Miao-Yunzai](https://gitee.com/yoimiya-kokomi/Miao-Yunzai),[Miao-Plugin](https://gitee.com/yoimiya-kokomi/miao-plugin),[liangshi-calc](https://gitee.com/liangshi233/liangshi-calc)，特在此声明感谢。
 
 ## 相关链接
