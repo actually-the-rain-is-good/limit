@@ -7,7 +7,7 @@ const require = createRequire(import.meta.url)
 const { exec } = require('child_process')
 
 const _path = process.cwd()
-const miaoFile = path.join(`${_path}/data/UserData`, `100000000.json`)
+const miaoFile = path.join(`${_path}/data/PlayerData/gs`, `100000000.json`)
 const miaosrFile = path.join(`${_path}/data/PlayerData/sr`, `100000000.json`)
 const srFile = path.join(`${_path}/plugins/limit/general/sr`, `100000000.json`)
 
@@ -51,7 +51,7 @@ export class limitstart extends plugin {
 
   async extensionpanel() {
     const extensionFile0 = path.join(`${_path}/plugins/limit/extension`, `100000000.json`)
-    const miaoFile1 = path.join(`${_path}/plugins/miao-plugin/resources/meta/artifact`, `artis-mark.js`)
+    const miaoFile1 = path.join(`${_path}/plugins/miao-plugin/resources/meta-gs/artifact`, `artis-mark.js`)
     const extensionFile1 = path.join(`${_path}/plugins/limit/extension`, `artis-mark.js`)
     const miaoFile2 = path.join(`${_path}/plugins/miao-plugin/config/system`, `character_system.js`)
     const extensionFile2 = path.join(`${_path}/plugins/limit/extension`, `character_system.js`)
