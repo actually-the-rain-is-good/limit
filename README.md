@@ -51,13 +51,15 @@ git clone --depth=1 https://github.com/actually-the-rain-is-good/limit.git ./plu
 
 分为两个版本，选择其一(无论替换哪一个版本,星铁极限都会替换)
 
+注:使用扩展版本时，后续喵喵更新出现冲突问题须自行手动删除冲突文件然后更新喵喵(暂时没考虑做备份)，不会请选择稳定的通用版本。
+
 ##### 1.general版本(该版本为通用版本，仅会更新原神可获得的角色。)
 
 * 可发送`#通用替换`进行文件替换，然后回复 `是`进行重启以应用
 
 ##### 2.extension版本(该版本为扩展版本，会更新更多角色如派蒙(已更新)、女士(已更新)、天理....)
 
-* 使用该版本需先将插件目录下【extension】文件中【character】文件夹复制到【miao-plugin/resources/meta】下
+* 使用该版本需先将插件目录下【extension】文件中【character】文件夹复制到【miao-plugin/resources/meta-gs】下
 
 * 发送`#扩展替换`进行相关文件替换，然后回复`是`进行重启以应用
 
