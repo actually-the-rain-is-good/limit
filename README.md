@@ -5,8 +5,8 @@
 [![访问量](https://profile-counter.glitch.me/limit/count.svg)](https://gitee.com/actually-the-rain-is-good/limit)
 
 [![](https://img.shields.io/badge/Yunzai-v3-yellow)](https://gitee.com/Le-niao/Yunzai-Bot)
-[![](https://img.shields.io/badge/Miao﹣­­­­­­Yunzai-v3.1.2-yellow)](https://gitee.com/yoimiya-kokomi/Miao-Yunzai)
-[![](https://img.shields.io/badge/TRSS﹣­­­­­­Yunzai-v3.1.1-yellow)](https://gitee.com/TimeRainStarSky/Yunzai)
+[![](https://img.shields.io/badge/Miao﹣­­­­­­Yunzai-v3.1.3-yellow)](https://gitee.com/yoimiya-kokomi/Miao-Yunzai)
+[![](https://img.shields.io/badge/TRSS﹣­­­­­­Yunzai-v3.1.2-yellow)](https://gitee.com/TimeRainStarSky/Yunzai)
 [![](https://img.shields.io/badge/Author-其实雨很好-red)](https://gitee.com/actually-the-rain-is-good)
 <a href='https://gitee.com/actually-the-rain-is-good/limit/stargazers'><img src='https://gitee.com/actually-the-rain-is-good/limit//badge/star.svg?theme=dark' alt='star'></img></a>
 </div>

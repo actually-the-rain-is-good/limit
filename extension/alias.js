@@ -1,5 +1,5 @@
 export const alias = {
-  // 1.1
+  // 1.0
   琴: 'Jean,团长,代理团长,琴团长,蒲公英骑士',
   丽莎: 'Lisa,图书管理员,图书馆管理员,蔷薇魔女,阿姨',
   空: '男主,男主角,龙哥,空哥,男爷',
@@ -83,6 +83,6 @@ export const alias = {
   莱欧斯利: 'Wriothesley,莱欧,枫丹桑博',
   那维莱特: 'Neuvillette,那维,水龙王,水龙,审判官,海獭,龙王',
   夏洛蒂: 'Charlotte,夏洛,夏洛帝,记者,小记者',
-  芙宁娜: 'Furina,Focalors,水神,芙芙,芙卡洛斯',
+  芙宁娜: 'Furina,Focalors,水神,芙芙,芙卡洛斯,傻芙芙',
 }
 
