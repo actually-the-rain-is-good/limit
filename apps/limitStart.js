@@ -217,7 +217,7 @@ export class limitstart extends plugin {
   extensionPanel() {
     const replaceFiles = [
       {
-        limit: `${extensionPath}/gs`,
+        limit: `${extensionPath}`,
         miao: `${_path}/data/PlayerData/gs`,
         type: '.json'
       }, {
