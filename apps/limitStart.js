@@ -1,18 +1,15 @@
 import plugin from '../../../lib/plugins/plugin.js';
+import set from '../utils/setting.js'
 import fs from 'node:fs';
-import path from 'path';
-import { createRequire } from 'module'
-
-const require = createRequire(import.meta.url)
-const { exec } = require('child_process')
+import _ from 'lodash'
 
 const _path = process.cwd();
-const gr_path = process.cwd() + '/plugins/limit/general';
-const es_path = process.cwd() + '/plugins/limit/extension';
-const miao_path = process.cwd() + '/plugins/miao-plugin/resources/meta-gs';
-const srFile = path.join(`${gr_path}/sr`, `100000000.json`);
-const miaogsFile = path.join(`${_path}/data/PlayerData/gs`, `100000000.json`);
-const miaosrFile = path.join(`${_path}/data/PlayerData/sr`, `100000000.json`);
+const generalPath = `${_path}/plugins/limit/general`
+const extensionPath = `${_path}/plugins/limit/extension`
+const miaoPath = `${_path}/plugins/miao-plugin/resources/meta-gs`
+
+var startReplace = set.getConfig('limitStart')?.startReplace;
+var versionReplace = set.getConfig('limitStart')?.versionReplace;
 
 export class limitstart extends plugin {
   constructor() {
@@ -24,12 +21,27 @@ export class limitstart extends plugin {
       rule: [
         {
           reg: '^#?通用(替换|初始化)$',
-          fnc: 'generalpanel',
+          fnc: 'generalPl',
           permission: 'master'
         },
         {
           reg: '^#?扩展(替换|初始化)$',
-          fnc: 'extensionpanel',
+          fnc: 'extensionPl',
+          permission: 'master'
+        },
+        {
+          reg: '^#?(limit|lp)设置(自动|开机|启动)?替换(开启|关闭)$',
+          fnc: 'startSet',
+          permission: 'master'
+        },
+        {
+          reg: '^#?(limit|lp)设置(自动|开机|启动)?替换(通用|扩展)$',
+          fnc: 'versionSet',
+          permission: 'master'
+        },
+        {
+          reg: '^#?(limit|lp)查看(当前)?设置$',
+          fnc: 'seeSet',
           permission: 'master'
         }
       ],
@@ -37,14 +49,67 @@ export class limitstart extends plugin {
     this.key = 'Yz:restart'
   }
 
-  async generalpanel() {
-    const grFile0 = path.join(`${gr_path}`, `100000000.json`)
-    fs.copyFile(grFile0, miaogsFile, (err) => {
-      if (err) throw err
-    })
-    fs.copyFile(srFile, miaosrFile, (err) => {
-      if (err) throw err
-    })
+  async seeSet (e) {
+    let versRpc = versionReplace;
+		e.reply('[limit]当前设置\n' + '自动替换开关:' + startReplace + '\n自动替换版本:' + versRpc,true)
+  }
+
+  async startSet (e) {
+	  let msg = e.msg.replace(/^#?(limit|lp)设置(自动|开机|启动)?替换/g, '');
+    if (msg === '开启'){
+      let newREG = new RegExp('(limit|lp)设置(自动|开机|启动)?替换$', 'g');
+      let setting = './plugins/limit/config/limitStart.yaml'
+      let config = fs.readFileSync(setting, 'utf8')
+        newREG = new RegExp('startReplace: \\w+','g')
+        config = config.replace(newREG,'startReplace: ' + 'true')
+        fs.writeFileSync(setting, config, 'utf8')
+      startReplace = true;
+		  e.reply('已开启自动替换')
+		  return true;
+    } else {
+	    let newREG = new RegExp('(limit|lp)设置(自动|开机|启动)?替换$', 'g');
+      let setting = './plugins/limit/config/limitStart.yaml'
+      let config = fs.readFileSync(setting, 'utf8')
+        newREG = new RegExp('startReplace: \\w+','g')
+        config = config.replace(newREG,'startReplace: ' + 'false')
+        fs.writeFileSync(setting, config, 'utf8')
+      startReplace = false;
+		  e.reply('自动替换已关闭')
+		  return true;
+    }
+  }
+
+  async versionSet (e) {
+	  let msg = e.msg.replace(/^#?(limit|lp)设置(自动|开机|启动)?替换/g, '');
+    if (startReplace === false){
+		  e.reply('请先发送【#lp设置替换开启】开启自动替换后再进行替换版本设置')
+		  return true;
+    }
+    if (msg === '通用'){
+	    let newREG = new RegExp('(limit|lp)设置(自动|开机|启动)?替换$', 'g');
+      let setting = './plugins/limit/config/limitStart.yaml'
+      let config = fs.readFileSync(setting, 'utf8')
+        newREG = new RegExp('versionReplace: \\w+','g')
+        config = config.replace(newREG,'versionReplace: ' + 'general')
+        fs.writeFileSync(setting, config, 'utf8')
+      versionReplace = 'general';
+		  e.reply('自动替换已设置通用')
+		  return true;
+    } else {
+	    let newREG = new RegExp('(limit|lp)设置(自动|开机|启动)?替换$', 'g');
+      let setting = './plugins/limit/config/limitStart.yaml'
+      let config = fs.readFileSync(setting, 'utf8')
+        newREG = new RegExp('versionReplace: \\w+','g')
+        config = config.replace(newREG,'versionReplace: ' + 'extension')
+        fs.writeFileSync(setting, config, 'utf8')
+      versionReplace = 'extension';
+		  e.reply('自动替换已设置扩展')
+		  return true;
+    }
+  }
+
+  async generalPl () {
+    this.generalPanel()
     this.setContext('hei');
     await this.e.reply(`极限面板(通用)替换成功  ✅\n是否重启云崽以载入数据[重启请发【是】]`, true)
       this.timer = setTimeout(() => {
@@ -52,34 +117,8 @@ export class limitstart extends plugin {
       }, this.waitingTime);
   }
 
-  async extensionpanel() {
-    const esFile0 = path.join(`${_path}/plugins/limit/extension`, `100000000.json`)
-    const miaoFile1 = path.join(`${miao_path}/artifact`, `artis-mark.js`)
-    const esFile1 = path.join(`${es_path}`, `artis-mark.js`)
-    const miaoFile2 = path.join(`${miao_path}/character`, `alias.js`)
-    const esFile2 = path.join(`${es_path}`, `alias.js`)
-    const miaoFile3 = path.join(`${miao_path}/character`, `data.json`)
-    const esFile3 = path.join(`${es_path}`, `data.json`)
-    const miaoFile4 = path.join(`${miao_path}/character`, `extra.js`)
-    const esFile4 = path.join(`${es_path}`, `extra.js`)
-    fs.copyFile(srFile, miaosrFile, (err) => {
-      if (err) throw err
-    })
-    fs.copyFile(esFile0, miaogsFile, (err) => {
-      if (err) throw err
-    })
-    fs.copyFile(esFile1, miaoFile1, (err) => {
-      if (err) throw err
-    })
-    fs.copyFile(esFile2, miaoFile2, (err) => {
-      if (err) throw err
-    })
-    fs.copyFile(esFile3, miaoFile3, (err) => {
-      if (err) throw err
-    })
-    fs.copyFile(esFile4, miaoFile4, (err) => {
-      if (err) throw err
-    })
+  async extensionPl () {
+    this.extensionPanel()
     this.setContext('hei');
     await this.e.reply(`拓展极限面板(扩展)替换成功  ✅\n是否重启云崽以载入数据[重启请发【是】]`, true)
         this.timer = setTimeout(() => {
@@ -87,7 +126,7 @@ export class limitstart extends plugin {
         }, this.waitingTime);
   }
 
-  startTimer () {
+  startTimer() {
     this.timer = setInterval(() => {
     let now = Date.now();
       for (let user_id in this.timeout) {
@@ -99,12 +138,23 @@ export class limitstart extends plugin {
     }, 1000);
   }
 
-  stopTimer () {
+  stopTimer() {
     clearInterval(this.timer);
     this.timer = null;
   }
 
   async init () {
+    if (startReplace === true) {
+      if (versionReplace === 'general') {
+        this.generalPanel()
+        logger.mark('[limit]通用版本自动刷新完成')
+      } else {
+        this.extensionPanel()
+        logger.mark('[limit]扩展版本自动刷新完成')
+      }
+    } else {
+      return false;
+    }
     let restart = await redis.get(this.key)
     if (restart) {
       restart = JSON.parse(restart)
@@ -122,40 +172,12 @@ export class limitstart extends plugin {
     }
   }
 
-  async hei(e) {
+  async hei () {
     let msg = this.e.msg;
     if(msg == '是'){
     await this.e.reply('开始执行重启，请稍等...')
-    logger.mark(`${this.e.logFnc} 开始执行重启，请稍等...`)
-    let data = JSON.stringify({
-      isGroup: !!this.e.isGroup,
-      id: this.e.isGroup ? this.e.group_id : this.e.user_id,
-      time: new Date().getTime()
-    })
-    let npm = await this.checkPnpm()
-    try {
-      await redis.set(this.key, data, { EX: 120 })
-      let cm = `${npm} start`
-      if (process.argv[1].includes('pm2')) {
-        cm = `${npm} run restart`
-      }
-      exec(cm, { windowsHide: true }, (error, stdout, stderr) => {
-        if (error) {
-          redis.del(this.key)
-          this.e.reply(`操作失败！\n${error.stack}`)
-          logger.error(`重启失败\n${error.stack}`)
-        } else if (stdout) {
-          logger.mark('重启成功，运行已由前台转为后台')
-          logger.mark(`查看日志请用命令：${npm} run log`)
-          logger.mark(`停止后台运行命令：${npm} stop`)
-          process.exit()
-        }
-      })
-    } catch (error) {
-      redis.del(this.key)
-      let e = error.stack ?? error
-      this.e.reply(`操作失败！\n${e}`)
-    }
+    logger.mark(`[limit]开始执行重启，请稍等...`)
+    this.restartApp()
     this.finish('hei')
    } else {
      await this.e.reply('重启操作已取消，请手动重启以载入数据')
@@ -163,17 +185,64 @@ export class limitstart extends plugin {
    }
   }
 
-  async checkPnpm () {
-    let npm = 'npm'
-    let ret = await this.execSync('pnpm -v')
-    if (ret.stdout) npm = 'pnpm'
-    return npm
+  async restartApp() {
+    setTimeout(() => this.restart(), 1000)
   }
 
-  async execSync (cmd) {
-    return new Promise((resolve, reject) => {
-      exec(cmd, { windowsHide: true }, (error, stdout, stderr) => {
-        resolve({ error, stdout, stderr })
+  restart() {
+    new Restart(this.e).restart()
+  }
+
+  generalPanel() {
+    const replaceFiles = [
+      {
+        limit: `${generalPath}/gs`,
+        miao: `${_path}/data/PlayerData/gs`,
+        type: '.json'
+      }, {
+        limit: `${generalPath}/sr`,
+        miao: `${_path}/data/PlayerData/sr`,
+        type: '.json'
+      }
+    ]
+
+    _.each(replaceFiles, v => {
+      let _files = fs.readdirSync(v.limit).filter(file => file.includes(v.type))
+      _.each(_files, f => {
+        fs.copyFileSync(`${v.limit}/${f}`, `${v.miao}/${f}`)
+      })
+    })
+  }
+
+  extensionPanel() {
+    const replaceFiles = [
+      {
+        limit: `${extensionPath}/gs`,
+        miao: `${_path}/data/PlayerData/gs`,
+        type: '.json'
+      }, {
+        limit: `${generalPath}/sr`,
+        miao: `${_path}/data/PlayerData/sr`,
+        type: '.json'
+      }, {
+        limit: `${extensionPath}/artifact`,
+        miao: `${miaoPath}/artifact`,
+        type: '.js'
+      }, {
+        limit: `${extensionPath}/character`,
+        miao: `${miaoPath}/character`,
+        type: '.json'
+      }, {
+        limit: `${extensionPath}/character`,
+        miao: `${miaoPath}/character`,
+        type: '.js'
+      }
+    ]
+
+    _.each(replaceFiles, v => {
+      let _files = fs.readdirSync(v.limit).filter(file => file.includes(v.type))
+      _.each(_files, f => {
+        fs.copyFileSync(`${v.limit}/${f}`, `${v.miao}/${f}`)
       })
     })
   }

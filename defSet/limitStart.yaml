@@ -1,0 +1,7 @@
+# 是否开启启动机器人自动替换
+
+startReplace: 
+
+# 自动替换版本(替换通用版本则填general，替换扩展版本则填extension)
+
+versionReplace: 

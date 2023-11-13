@@ -6,7 +6,7 @@
 
 [![](https://img.shields.io/badge/Yunzai-v3-yellow)](https://gitee.com/Le-niao/Yunzai-Bot)
 [![](https://img.shields.io/badge/Miao﹣­­­­­­Yunzai-v3.1.3-yellow)](https://gitee.com/yoimiya-kokomi/Miao-Yunzai)
-[![](https://img.shields.io/badge/TRSS﹣­­­­­­Yunzai-v3.1.2-yellow)](https://gitee.com/TimeRainStarSky/Yunzai)
+[![](https://img.shields.io/badge/TRSS﹣­­­­­­Yunzai-v3.1.3-yellow)](https://gitee.com/TimeRainStarSky/Yunzai)
 [![](https://img.shields.io/badge/Author-其实雨很好-red)](https://gitee.com/actually-the-rain-is-good)
 <a href='https://gitee.com/actually-the-rain-is-good/limit/stargazers'><img src='https://gitee.com/actually-the-rain-is-good/limit//badge/star.svg?theme=dark' alt='star'></img></a>
 </div>
@@ -22,6 +22,7 @@
 - [ ] 原神扩展角色/原魔图鉴
 - [x] 星铁极限面板
 - [x] 命令替换
+- [x] 启动替换
 
 ## 克隆方式
 
@@ -65,7 +66,9 @@ git clone --depth=1 https://github.com/actually-the-rain-is-good/limit.git ./plu
 
 ## 后续更新
 
-推荐使用本插件的更新命令`#limit更新`/`#lp更新`,更新之后不会自动重启,如有更新可发送`#通用替换`/`#扩展替换`进行文件替换,然后回复`是`进行重启以应用
+* 方法一: 使用本插件的更新命令`#limit更新`/`#lp更新`,如有更新可发送`#通用替换`/`#扩展替换`进行文件替换,然后回复`是`进行重启以应用;
+
+* 方法二: 使用`#全部更新`命令,不需要命令替换,需提前发送`#lp设置替换开启`及`#lp设置替换通用`/`#lp设置替换扩展`以开启启动自动替换,可发送`#lp查看设置`查看当前替换设置
 
 机器人启动后，发送`极限xx`即可查看该角色的极限面板
 
