@@ -88,7 +88,7 @@ export class Update extends plugin {
       /** 获取组件的更新日志 */
       let log = await this.getLog('limit')
       await this.reply(log)
-      await this.reply(`请发送【#通用替换】/【#扩展替换】进行文件替换，替换后重启生效`)
+      await this.reply(`可发送【#通用替换】/【#扩展替换】进行文件替换,替换后重启生效;或设置自动替换,手动发送重启即可自动替换`)
     }
 
     logger.mark(`${this.e.logFnc} 最后更新时间：${time}`)
