@@ -1,10 +1,14 @@
 import plugin from '../../../lib/plugins/plugin.js'
-import { createRequire } from 'module'
-import _ from 'lodash'
 import common from '../../../lib/common/common.js'
+import { createRequire } from 'module'
+import set from '../utils/setting.js'
+import _ from 'lodash'
 
 const require = createRequire(import.meta.url)
 const { exec, execSync } = require('child_process')
+
+var startReplace = set.getConfig('limitStart')?.startReplace;
+var versionReplace = set.getConfig('limitStart')?.versionReplace;
 
 // 是否在更新中
 let uping = false
@@ -88,7 +92,12 @@ export class Update extends plugin {
       /** 获取组件的更新日志 */
       let log = await this.getLog('limit')
       await this.reply(log)
-      await this.reply(`可发送【#通用替换】/【#扩展替换】进行文件替换,替换后重启生效;或设置自动替换,手动发送重启即可自动替换`)
+      if (startReplace === true) {
+        let versRpc = versionReplace;
+        await this.reply(`你已开启自动替换(当前替换版本为:` + versRpc + `),请发送【#重启】以应用更新.`)
+      } else {
+        await this.reply(`未开启自动替换,请发送【#通用替换】/【#扩展替换】进行文件替换,替换后重启生效`)
+      }
     }
 
     logger.mark(`${this.e.logFnc} 最后更新时间：${time}`)
