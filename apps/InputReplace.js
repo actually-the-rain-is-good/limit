@@ -27,7 +27,7 @@ export class limit extends plugin {
         });
         let Msg = msg[0]
         if (/极限/.test(Msg)) {
-          Msg = Msg.replace(/#*(星铁)?极限(面板|圣遗物|伤害|武器/)?/g, '');
+          Msg = Msg.replace(/#*(星铁)?极限(面板|圣遗物|伤害|武器)?/g, '');
           let mb = `${Msg}${/面板|圣遗物|伤害|武器/.test(Msg) ? '' : '面板'}`
           Msg =  `#${mb}100000000`
         } else {
