@@ -8,7 +8,7 @@ export class limit extends plugin {
 			name: 'InputReplace',
 			dsc: '输入替换',
 			event: 'message',
-			priority: -10000
+			priority: -10
 		})
 	}
 
@@ -25,7 +25,7 @@ export class limit extends plugin {
               return element;
             }
         });
-        let Msg
+        let Msg = msg[0]
         if (/极限/.test(Msg)) {
           Msg = Msg.replace(/#*(星铁)?极限(面板|圣遗物|伤害|武器/)?/g, '');
           let mb = `${Msg}${/面板|圣遗物|伤害|武器/.test(Msg) ? '' : '面板'}`
