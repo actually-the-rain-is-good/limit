@@ -1,5 +1,6 @@
 import plugin from '../../../lib/plugins/plugin.js'
 import common from '../../../lib/common/common.js'
+import { limitstart } from './limitStart.js'
 import { createRequire } from 'module'
 import set from '../utils/setting.js'
 import _ from 'lodash'
@@ -94,6 +95,7 @@ export class Update extends plugin {
       await this.reply(log)
       if (startReplace === true) {
         let versRpc = versionReplace;
+        await new limitstart(this.e).auto()
         await this.reply(`你已开启自动替换(当前替换版本为:` + versRpc + `),请发送【#重启】以应用更新.`)
       } else {
         await this.reply(`未开启自动替换,请发送【#通用替换】/【#扩展替换】进行文件替换,替换后重启生效`)

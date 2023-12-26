@@ -144,17 +144,7 @@ export class limitstart extends plugin {
   }
 
   async init () {
-    if (startReplace === true) {
-      if (versionReplace === 'general') {
-        this.generalPanel()
-        logger.mark('[limit]通用版本自动刷新完成')
-      } else {
-        this.extensionPanel()
-        logger.mark('[limit]扩展版本自动刷新完成')
-      }
-    } else {
-      return false;
-    }
+    this.auto()
     let restart = await redis.get(this.key)
     if (restart) {
       restart = JSON.parse(restart)
@@ -187,6 +177,20 @@ export class limitstart extends plugin {
 
   async restartApp() {
     setTimeout(() => this.restart(), 1000)
+  }
+
+  auto() {
+    if (startReplace === true) {
+      if (versionReplace === 'general') {
+        this.generalPanel()
+        logger.mark('[limit]通用版本自动刷新完成')
+      } else {
+        this.extensionPanel()
+        logger.mark('[limit]扩展版本自动刷新完成')
+      }
+    } else {
+      return false;
+    }
   }
 
   restart() {
